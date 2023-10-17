@@ -1,6 +1,5 @@
-**********************************************
+
                     DESAFIO
-                    
 Rodar os comandos abaixo para realizar o deploy do pod/imagem do banco e app
 Modificada a porta do popula-dados.http para que a chama rest execute.
 *******************************************************
