@@ -51,5 +51,5 @@ jobs:
       with:
         manifests: |
           ./kube-news/k8s/deployment.yaml
-          images: |
+        images: |
            ericonp/kube-news:${{ github.run_number }}
