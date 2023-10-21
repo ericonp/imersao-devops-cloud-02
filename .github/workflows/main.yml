@@ -52,4 +52,4 @@ jobs:
         manifests: |
           ./kube-news/k8s/deployment.yaml
           images: |
-           index.docker.io/ericonp/kube-news:${{ github.run_number }}
+           ericonp/kube-news:${{ github.run_number }}
