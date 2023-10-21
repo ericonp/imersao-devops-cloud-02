@@ -44,7 +44,7 @@ jobs:
         aws-region: us-east-1
 
     - name: Configurar o KubeConfig
-      run: aws eks update-kubeconfig --name eks-cluster
+      run: aws eks update-kubeconfig --name ${{ secrets.aws_nome_cluster_eks }}
       
     - name: Aplicar o deploy
       uses: Azure/k8s-deploy@v4.9
@@ -52,4 +52,4 @@ jobs:
         manifests: |
           ./kube-news/k8s/deployment.yaml
           images: |
-            ericonp/kube-news:${{ github.run_number }}
+            hub.docker.com/repository/docker/ericonp/kube-news:${{ github.run_number }}
