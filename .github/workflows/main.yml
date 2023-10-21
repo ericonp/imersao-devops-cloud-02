@@ -25,8 +25,8 @@ jobs:
         file: ./kube-news/src/Dockerfile
         push: true
         tags: |
-          ericonp/kube-news:latest
           ericonp/kube-news:${{ github.run_number }}
+          ericonp/kube-news:latest
 
 
   CD:
