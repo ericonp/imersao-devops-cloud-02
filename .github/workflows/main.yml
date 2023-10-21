@@ -23,7 +23,7 @@ jobs:
         context: ./kube-news/src
         file: ./kube-news/src/Dockerfile
         push: true
-        tags:
+        tags: |
           ericonp/kube-news:latest
           ericonp/kube-news:${{ github.run_number }}
 
