@@ -43,9 +43,13 @@ jobs:
         aws-secret-access-key: ${{ secrets.aws_secret_key }}
         aws-region: us-east-1
 
-    - name: Autenticar na AWS
-      run: echo "autenticar na AWS"
     - name: Configurar o KubeConfig
-      run: echo "Configurar o kubeconfig"
+      run: aws eks update-kubeconfig --name ${{ secrets.aws_nome_cluster_eks }}
+      
     - name: Aplicar o deploy
-      run: echo "executar o kubectl apply"
+      uses: Azure/k8s-deploy@v4.9
+      with:
+        manifests: |
+          ./kube-news/k8s/deployment.yaml
+          images: |
+            ericonp/kube-news:${{ github.run_number }}
